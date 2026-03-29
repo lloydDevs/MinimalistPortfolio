@@ -24,7 +24,7 @@ const MainPage = () => (
 
       {/* Sidebar Area */}
       <aside className="lg:col-span-4">
-        <div className="sticky top-16 space-y-8">
+        <div className="sticky top-1 space-y-8">
           <Sidebar />
         </div>
       </aside>
