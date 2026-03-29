@@ -27,7 +27,7 @@ export const About = () => {
                     <div className="space-y-1">
                         <p className="text-[9px] font-black uppercase tracking-widest text-orange-600 dark:text-orange-500">Vision & Web</p>
                         <p className="text-black dark:text-zinc-200">
-                            <p>Specialized in scalable <span className="font-bold">Web Applications</span> (React, Laravel, Python).
+                            <p>Specialized in scalable <span className="font-bold">Web Applications</span> (Laravel, Vue).
                             </p>
                             Knowledgeable in <span className="font-bold">Image Processing</span>. </p>
                     </div>

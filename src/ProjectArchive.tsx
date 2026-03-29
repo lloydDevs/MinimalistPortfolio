@@ -181,6 +181,7 @@ export const ProjectArchive = () => {
         {
             title: "Palay Classifier",
             tag: "Image Processing",
+            github: "https://github.com/Tokikaze0/Palay_Tech.git",
             fullDesc: `SYSTEM OVERVIEW:
                     An end-to-end agricultural automation solution designed to modernize the palay trading process. The system replaces manual inspection with high-precision computer vision and integrated hardware to ensure fairness and transparency for both farmers and traders.
 
@@ -258,7 +259,7 @@ export const ProjectArchive = () => {
         },
         {
             title: "QUIZ App",
-            github: "",
+            github: "https://github.com/lloydDevs/quiz-game.git",
             tag: "Web Application",
             fullDesc: `SYSTEM OVERVIEW:
             A dynamic, real-time quiz application engineered to deliver high-concurrency trivia challenges. The system leverages external REST APIs to fetch diverse question sets, processed through a custom state-management engine that handles rapid-fire user input, synchronized timers, and competitive scoring logic.
