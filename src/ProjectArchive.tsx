@@ -368,6 +368,37 @@ export const ProjectArchive = () => {
                 ))}
             </div>
 
+            {/* Status Notice for Pending Uploads */}
+            <div className="mt-12 mb-20 p-8 border border-dashed border-gray-200 dark:border-zinc-800 rounded-2xl bg-gray-50/30 dark:bg-zinc-900/10">
+                <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="flex items-center gap-2">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+                        </span>
+                        <span className="text-[10px] font-mono text-orange-600 dark:text-orange-400 uppercase tracking-[0.3em] font-black">
+                            System_Status: Syncing
+                        </span>
+                    </div>
+
+                    <h3 className="text-sm font-bold text-black dark:text-white uppercase tracking-tighter">
+                        More Projects Currently Being Archived
+                    </h3>
+
+                    <p className="text-[11px] text-gray-500 dark:text-zinc-500 max-w-sm leading-relaxed font-medium">
+                        Technical documentation, source code, and media assets for additional
+                        industrial and web projects are currently being optimized for this
+                        digital record. Please check back soon.
+                    </p>
+
+                    <div className="pt-2">
+                        <span className="text-[9px] font-mono text-gray-300 dark:text-zinc-800 uppercase tracking-widest">
+                            Last_Sync: {new Date().toLocaleDateString()} // Victoria_Mindoro_Node
+                        </span>
+                    </div>
+                </div>
+            </div>
+
             <footer className="py-2 text-center border-t border-gray-100 dark:border-zinc-900">
                 <p className="text-[9px] font-mono text-gray-300 dark:text-zinc-800 uppercase tracking-[1em]">
                     End of Records // 2026
