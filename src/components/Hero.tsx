@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-import { ThemeToggle } from './ThemeToggle';
 import { About } from './About';
 import Profile from "../assets/my_ava.jpg";
 

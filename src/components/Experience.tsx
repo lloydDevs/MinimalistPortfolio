@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export const Experience = () => {
     const [expandedIndex, setExpandedIndex] = useState<number | null>(0); // Default first one open

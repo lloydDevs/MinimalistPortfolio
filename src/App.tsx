@@ -10,7 +10,6 @@ import { Competitions } from './components/Competetions';
 import { Contact } from './components/Contacts';
 import { StatusBoard } from './components/DigitalStats';
 import { ProjectArchive } from './ProjectArchive';
-import { ThemeToggle } from './components/ThemeToggle';
 import AssistiveTouch from './components/AssistiveTouch';
 
 // 1. Create a "MainPage" component for your existing content
