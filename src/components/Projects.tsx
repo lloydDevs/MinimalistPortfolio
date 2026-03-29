@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useNavigate } from 'react-router-dom';
 
 const ProjectItem = ({ title, tag, desc }: { title: string, tag: string, desc: string }) => (
