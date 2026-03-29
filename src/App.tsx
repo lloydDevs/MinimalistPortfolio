@@ -1,7 +1,7 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 
-// Component Imports
 import { Hero } from './components/Hero';
 import { Projects } from './components/Projects';
 import { Sidebar } from './components/Sidebar';
@@ -55,7 +55,7 @@ const MainPage = () => (
 export default function App() {
   return (
     <Router>
-
+      <ScrollToTop />
       <div className="min-h-screen bg-bg-soft dark:bg-bg-dark text-black dark:text-white transition-colors duration-300 selection:bg-orange-500/30 z-10">
         <div className="max-w-6xl mx-auto px-6 py-12">
           <AssistiveTouch />
