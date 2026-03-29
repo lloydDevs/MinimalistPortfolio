@@ -52,6 +52,9 @@ export const Gallery = () => {
                     <p className="text-[10px] font-mono text-primary font-bold mt-1 uppercase">
                         {images.length} Units // Index
                     </p>
+                    <p className="text-[8px] text-gray-500 dark:text-zinc-500 mt-1">
+                        Scroll left to explore more
+                    </p>
                 </div>
             </div>
 
