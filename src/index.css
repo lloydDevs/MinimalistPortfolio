@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-bg-soft: #fbfbfb;
+  --color-bg-dark: #0a0a0a;
+  --color-card-light: #ffffff;
+  --color-card-dark: #161616;
+  --color-border-light: #efefef;
+  --color-border-dark: #222222;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
