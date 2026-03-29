@@ -15,10 +15,6 @@ import AssistiveTouch from './components/AssistiveTouch';
 // 1. Create a "MainPage" component for your existing content
 const MainPage = () => (
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    {/* Global Navigation Header - Tightened */}
-
-
-    {/* Removed mt-12 or pt-12 from this grid */}
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
       {/* Main Content Area */}
       <main className="lg:col-span-8 space-y-12">

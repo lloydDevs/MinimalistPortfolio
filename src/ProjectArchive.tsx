@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Machine from './assets/singeingmachine.png';
 import Capstone01 from './assets/capstone01.jpg';
@@ -38,9 +38,7 @@ import Web3 from './assets/WEB3.png';
 import Web4 from './assets/WEB4.png';
 
 import { ParticleBackground } from './components/ParticleBackground';
-import { ThemeToggle } from './components/ThemeToggle';
 import AssistiveTouch from './components/AssistiveTouch';
-import { fromJSON } from 'postcss';
 
 const ProjectDetailCard = ({ project, index, onImageClick }: { project: any, index: number, onImageClick: (src: string) => void }) => {
     const allImages = [project.screenshot, ...(project.gallery || [])].slice(0, 4);
