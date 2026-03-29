@@ -41,26 +41,22 @@ import { ParticleBackground } from './components/ParticleBackground';
 import AssistiveTouch from './components/AssistiveTouch';
 
 const ProjectDetailCard = ({ project, index, onImageClick }: { project: any, index: number, onImageClick: (src: string) => void }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
     const allImages = [project.screenshot, ...(project.gallery || [])].slice(0, 4);
 
     return (
-        <div className="group border-t border-gray-100 dark:border-zinc-900 py-12 md:py-20 first:border-t-0">
-            {/* Header section remains the same... */}
-            {/* Header: Title, Badge, and Description */}
-            <div className="mb-8">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+        <div className="group border-t border-gray-100 dark:border-zinc-900 py-12 md:py-16 first:border-t-0">
+            <div className="mb-6">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                     <div className="flex flex-wrap items-center gap-3">
-                        {/* Project Number */}
                         <span className="text-[10px] font-mono text-blue-600 font-bold shrink-0">
                             [{String(index + 1).padStart(2, '0')}]
                         </span>
 
-                        {/* Title */}
                         <h2 className="text-2xl md:text-3xl font-black text-black dark:text-white uppercase tracking-tighter leading-tight">
                             {project.title}
                         </h2>
 
-                        {/* Champion Badge */}
                         {project.badge && (
                             <div className="flex items-center gap-2 bg-orange-500/10 dark:bg-orange-500/20 border border-orange-500/50 px-3 py-1 rounded-full shrink-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-orange-500">
@@ -72,67 +68,60 @@ const ProjectDetailCard = ({ project, index, onImageClick }: { project: any, ind
                             </div>
                         )}
 
-                        {/* GitHub Icon - RE-ADDED HERE */}
                         {project.github && (
-                            <a
-                                href={project.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="p-2 -m-2 text-gray-400 hover:text-black dark:hover:text-white transition-colors"
-                                aria-label="View GitHub Repository"
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-                                    <path d="M9 18c-4.51 2-5-2-7-2" />
-                                </svg>
+                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-2 -m-2 text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" /><path d="M9 18c-4.51 2-5-2-7-2" /></svg>
                             </a>
                         )}
                     </div>
 
-                    {/* Tech Stack Tags */}
                     <div className="flex flex-wrap gap-2">
                         {project.tech.map((t: string) => (
-                            <span key={t} className="text-[9px] md:text-[10px] font-mono text-gray-400 border border-gray-100 dark:border-zinc-800 px-2 py-1 uppercase tracking-widest">
+                            <span key={t} className="text-[9px] font-mono text-gray-400 border border-gray-100 dark:border-zinc-800 px-2 py-0.5 uppercase">
                                 {t}
                             </span>
                         ))}
                     </div>
                 </div>
 
-                <p className="text-[11px] md:text-[12px] leading-relaxed text-gray-500 dark:text-zinc-500 max-w-3xl whitespace-pre-line">
-                    {project.fullDesc}
-                </p>
-            </div>
+                {/* FOLDABLE DESCRIPTION */}
+                <div className="relative">
+                    <p className={`text-[11px] md:text-[12px] leading-relaxed text-gray-500 dark:text-zinc-500 max-w-3xl whitespace-pre-line transition-all duration-500 ${!isExpanded ? 'max-h-20 overflow-hidden mask-linear-gradient' : 'max-h-[1000px]'}`}>
+                        {project.fullDesc}
+                    </p>
 
-            {/* Image Row with Champion Badge Overlay */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
-                {allImages.map((src: string, i: number) => {
-                    const isVideo = src.match(/\.(mp4|webm|ogg)$/i);
-
-                    return (
-                        <div
-                            key={i}
-                            className="relative aspect-[4/3] overflow-hidden bg-gray-50 dark:bg-zinc-900/50 rounded-sm cursor-zoom-in md:grayscale md:group-hover:grayscale-0 transition-all duration-700"
-                            onClick={() => onImageClick(src)}
-                        >
-
-                            {isVideo ? (
-                                <video src={src} autoPlay muted loop playsInline className="w-full h-full object-cover opacity-90 md:opacity-80 hover:opacity-100 transition-all duration-500" />
-                            ) : (
-                                <img src={src} alt={`${project.title} asset ${i}`} className="w-full h-full object-cover opacity-90 md:opacity-80 hover:opacity-100 md:hover:scale-110 transition-all duration-500" />
-                            )}
-                        </div>
-                    );
-                })}
-            </div>
-
-            {/* Footer data line remains the same... */}
-            <div className="mt-6 flex flex-col sm:flex-row justify-between gap-2 text-[8px] font-mono text-gray-300 dark:text-zinc-800 uppercase tracking-[0.4em]">
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                    <span className="truncate max-w-[200px] sm:max-w-none">
-                        FILE_ID: {project.title.replace(/\s+/g, '_').toUpperCase()}
-                    </span>
+                    <button
+                        onClick={() => setIsExpanded(!isExpanded)}
+                        className="mt-2 text-[10px] font-bold uppercase tracking-widest text-blue-600 hover:text-blue-500 flex items-center gap-1 transition-colors"
+                    >
+                        {isExpanded ? (
+                            <>Collapse Details <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="m18 15-6-6-6 6" /></svg></>
+                        ) : (
+                            <>View Technical Specs <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="m6 9 6 6 6-6" /></svg></>
+                        )}
+                    </button>
                 </div>
+            </div>
+
+            {/* Image Row */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+                {allImages.map((src: string, i: number) => (
+                    <div
+                        key={i}
+                        className="relative aspect-[4/3] overflow-hidden bg-gray-50 dark:bg-zinc-900/50 rounded-sm cursor-zoom-in md:grayscale md:group-hover:grayscale-0 transition-all duration-700"
+                        onClick={() => onImageClick(src)}
+                    >
+                        {src.match(/\.(mp4|webm|ogg)$/i) ? (
+                            <video src={src} autoPlay muted loop playsInline className="w-full h-full object-cover opacity-90 md:opacity-80 hover:opacity-100" />
+                        ) : (
+                            <img src={src} alt="Asset" className="w-full h-full object-cover opacity-90 md:opacity-80 hover:opacity-100 md:hover:scale-110" />
+                        )}
+                    </div>
+                ))}
+            </div>
+
+            <div className="mt-6 flex justify-between text-[8px] font-mono text-gray-300 dark:text-zinc-800 uppercase tracking-[0.4em]">
+                <span>FILE_ID: {project.title.replace(/\s+/g, '_').toUpperCase()}</span>
                 <span className="hidden sm:block">STATUS: ARCHIVED_RECORDS</span>
             </div>
         </div>
