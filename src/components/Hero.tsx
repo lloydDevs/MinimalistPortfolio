@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { About } from './About';
-import Profile from "../assets/my_ava.jpg";
+import Profile from "../assets/GRADPIC01.jpg";
 
 export const Hero = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
