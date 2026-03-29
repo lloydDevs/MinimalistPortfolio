@@ -67,19 +67,24 @@ export default function App() {
             <Route path="/projects" element={<ProjectArchive />} />
           </Routes>
 
-          {/* Professional Footer stays on BOTH pages */}
-          <footer className="mt-5 py-5 border-t border-gray-100 dark:border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-left">
-              <p className="text-[10px] font-mono text-gray-400 tracking-[0.3em] uppercase mb-1">
-                © 2026 Lloyd Ramirez • Calapan City • Mindoro State University
+          <footer className="mt-20 pb-10 border-t border-gray-100 dark:border-zinc-900 pt-8 px-4">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              {/* Left Side: Copyright or Name */}
+              <p className="text-[10px] font-medium text-gray-400 dark:text-zinc-600 uppercase tracking-[0.2em]">
+                © 2026 LLOYD RAMIREZ
               </p>
-            </div>
 
-            <div className="flex gap-8 text-[10px] font-mono text-gray-400 tracking-widest uppercase">
-              <a href="https://github.com" className="hover:text-black dark:hover:text-white transition-colors">Github</a>
-              <a href="https://linkedin.com" className="hover:text-black dark:hover:text-white transition-colors">LinkedIn</a>
+              {/* The Credit Line */}
+              <div className="flex items-center gap-3">
+                <span className="h-[1px] w-8 bg-gray-100 dark:bg-zinc-800 hidden md:block" />
+                <p className="text-[10px] font-bold text-gray-400 dark:text-zinc-500 uppercase tracking-[0.15em]">
+                  Design Credit <span className="mx-2 text-gray-300 dark:text-zinc-800">/</span>
+                  <span className="text-black dark:text-white hover:text-orange-600 transition-colors cursor-default">
+                    Bryl Lim
+                  </span>
+                </p>
+              </div>
             </div>
-
           </footer>
         </div>
       </div>
