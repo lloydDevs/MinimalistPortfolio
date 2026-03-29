@@ -20,10 +20,10 @@ export const ParticleBackground = () => {
         <Particles
             id="tsparticles"
             options={{
-                fullScreen: { enable: true, zIndex: -1 }, // Places it behind everything
+                fullScreen: { enable: true, zIndex: -1 },
                 particles: {
                     number: { value: 80, density: { enable: true } },
-                    color: { value: "#3b82f6" }, // Match your blue-600 theme
+                    color: { value: "#3b82f6" },
                     links: {
                         enable: true,
                         distance: 150,

@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react';
 
 export const ThemeToggle = () => {
-    // 1. Initialize state from LocalStorage or System Preference
     const [darkMode, setDarkMode] = useState(() => {
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
             return savedTheme === 'dark';
         }
-        // Fallback to system preference if no saved theme exists
         return window.matchMedia('(prefers-color-scheme: dark)').matches;
     });
 

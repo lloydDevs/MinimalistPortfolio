@@ -2,7 +2,6 @@
 export const About = () => {
     return (
         <section className="max-w-3xl space-y-6">
-            {/* Minimalist Header */}
             <div className="flex items-center gap-3 px-1">
                 <h2 className="text-[10px] font-black uppercase tracking-[0.3em] text-black dark:text-white">
                     Bio / Nature of Work
@@ -15,7 +14,6 @@ export const About = () => {
                     I am a <span className="text-black dark:text-white">Full-Stack Web Developer & Industrial Programmer</span> with a degree in <span className="text-black dark:text-white">BSIT (1.55 GWA)</span> from Mindoro State University. My work bridges the gap between digital software and physical hardware.
                 </p>
 
-                {/* The "Nature of Work" Grid - High Density */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 pt-2 border-t border-gray-50 dark:border-zinc-900">
                     <div className="space-y-1">
                         <p className="text-[9px] font-black uppercase tracking-widest text-orange-600 dark:text-orange-500">Core Engineering</p>

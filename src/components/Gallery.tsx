@@ -29,7 +29,6 @@ export const Gallery = () => {
     ];
     const scrollRef = useRef<HTMLDivElement>(null);
 
-    // Scroll Logic: Moves the container by the width of 2 images
     const scroll = (direction: 'left' | 'right') => {
         if (scrollRef.current) {
             const { scrollLeft, clientWidth } = scrollRef.current;
@@ -58,7 +57,6 @@ export const Gallery = () => {
                 </div>
             </div>
 
-            {/* Navigation Arrows - Visible on Hover */}
             <button
                 onClick={() => scroll('left')}
                 className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center opacity-0 group-hover/main:opacity-100 transition-all hover:bg-primary hover:border-primary shadow-xl"

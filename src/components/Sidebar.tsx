@@ -1,7 +1,7 @@
 
 import { Experience } from './Experience';
 import { TechStack } from './TechStack';
-import { Certifications } from './Certifications'; // Assuming this is in its own file now
+import { Certifications } from './Certifications';
 
 export const Sidebar = () => {
     return (

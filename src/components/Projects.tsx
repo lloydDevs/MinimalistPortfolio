@@ -83,18 +83,13 @@ export const Projects = () => {
                hover:shadow-[0_0_25px_rgba(234,88,12,0.6)]
                overflow-hidden"
                 >
-                    {/* 1. ANIMATED GLOW OVERLAY (Continuous Pulse) */}
                     <div className="absolute inset-0 rounded-full bg-orange-500/20 blur-md animate-pulse group-hover:animate-none opacity-100 group-hover:opacity-0 transition-opacity duration-300" />
 
-                    {/* 2. HOVER SHINE EFFECT */}
                     <div className="absolute top-0 -inset-full h-full w-1/2 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-20 group-hover:animate-shine" />
 
-                    {/* BUTTON CONTENT */}
                     <span className="relative z-10 text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] text-white">
                         View All Projects
                     </span>
-
-                    {/* 3. ARROW ICON container with Hover Animation */}
                     <div className="relative z-10 flex items-center justify-center w-5 h-5 rounded-full bg-white/10 group-hover:bg-white transition-colors duration-300">
                         <svg
                             className="text-white group-hover:text-orange-600 transition-all duration-300 transform group-hover:translate-x-0.5"

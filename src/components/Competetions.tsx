@@ -39,13 +39,11 @@ export const Competitions = () => {
                                 </h4>
                             </div>
 
-                            {/* Minimal Rank Indicator */}
                             <div className="flex items-center gap-3">
                                 <span className={`text-[9px] font-black uppercase tracking-widest ${isChampion ? 'text-orange-600 dark:text-orange-500' : 'text-gray-400 dark:text-zinc-600'
                                     }`}>
                                     {comp.rank}
                                 </span>
-                                {/* Tiny Status Dot */}
                                 <div className={`w-1 h-1 rounded-full ${isChampion ? 'bg-orange-600 animate-pulse' : 'bg-gray-200 dark:bg-zinc-800'
                                     }`} />
                             </div>

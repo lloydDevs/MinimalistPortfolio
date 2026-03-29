@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Added subValue to the props destructuring and the Type definition
 const ContactMethod = ({
     label,
     value,
@@ -12,7 +11,7 @@ const ContactMethod = ({
     value: string,
     href: string,
     icon: React.ReactNode,
-    subValue?: string // Optional property
+    subValue?: string
 }) => (
     <a
         href={href}

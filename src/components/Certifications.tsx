@@ -54,7 +54,6 @@ export const Certifications = () => {
                             </div>
                         </div>
 
-                        {/* Minimalist verification indicator */}
                         <div className="flex items-center justify-center w-6 h-6 rounded-full border border-gray-100 dark:border-zinc-800 group-hover:border-orange-500/30 group-hover:bg-orange-50 dark:group-hover:bg-orange-900/20 transition-all">
                             <div className="w-1.5 h-1.5 rounded-full bg-orange-600 shadow-[0_0_8px_rgba(37,99,235,0.4)]" />
                         </div>

@@ -18,23 +18,15 @@ export const Hero = () => {
     ];
 
     return (
-        /* 1. Changed p-8 to p-5 for mobile. Changed sm:p-4 to md:p-8 for better scaling */
         <div className="bg-white dark:bg-card-dark p-5 md:p-8 rounded-2xl border border-border-light dark:border-border-dark shadow-sm transition-colors duration-300">
-
-            {/* 2. Changed gap-8 to gap-6. Added items-center for mobile centering */}
             <div className="flex flex-col md:flex-row gap-6 items-center md:items-start mb-8 md:mb-10">
-
-                {/* Profile Image - Reduced size slightly for mobile (w-24), kept w-32 for desktop */}
                 <div className="w-24 h-24 md:w-32 md:h-32 bg-gray-100 dark:bg-zinc-800 rounded-xl overflow-hidden shrink-0 border border-border-light dark:border-border-dark shadow-inner">
                     <img src={Profile} alt="Profile" className="w-full h-full object-cover" />
                 </div>
-
-                {/* Content Container - Added text-center for mobile, text-left for desktop */}
                 <div className="flex-1 space-y-4 text-center md:text-left w-full">
                     <div>
                         <div className="flex flex-col md:flex-row items-center justify-between w-full mb-1 gap-2">
                             <div className="flex-1">
-                                {/* Adjusted text size: 2xl for mobile, 3xl for desktop */}
                                 <h1 className="text-2xl md:text-3xl font-black tracking-tight text-black dark:text-white flex items-center justify-center md:justify-start gap-2">
                                     Lloyd Ramirez
                                     <span className="text-orange-600 drop-shadow-[0_0_8px_rgba(249,115,22,0.4)]">
@@ -51,8 +43,6 @@ export const Hero = () => {
                             Calapan City, Philippines
                         </p>
                     </div>
-
-                    {/* Tags Section - Used flex-wrap and justified-center for mobile */}
                     <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-2 gap-y-1 text-[12px] md:text-sm font-semibold text-gray-600 dark:text-zinc-300">
                         <span>Full Stack Developer</span>
                         <span className="text-gray-300 dark:text-zinc-700 font-light">|</span>
@@ -60,8 +50,6 @@ export const Hero = () => {
                         <span className="text-gray-300 dark:text-zinc-700 font-light hidden sm:inline">|</span>
                         <span>IoT Developer</span>
                     </div>
-
-                    {/* Functional Dropdown Badge */}
                     <div className="relative inline-block text-left w-full md:w-auto">
                         <button
                             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
