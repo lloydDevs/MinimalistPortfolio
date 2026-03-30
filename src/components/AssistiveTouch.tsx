@@ -17,7 +17,7 @@ const AssistiveTouch = () => {
     }, [isOpen]);
 
     return (
-        <div className="fixed bottom-10 right-6 z- flex flex-col items-end">
+        <div className="fixed bottom-10 right-6 z-10 flex flex-col items-end">
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
