@@ -85,7 +85,7 @@ const ProjectDetailCard = ({ project, index, onImageClick }: { project: any, ind
                 </div>
                 {/* FOLDABLE DESCRIPTION */}
                 <div className="relative">
-                    <p className={`text-[11px] md:text-[12px] leading-relaxed text-gray-500 dark:text-zinc-500 max-w-3xl whitespace-pre-line transition-all duration-500 ${!isExpanded ? 'max-h-20 overflow-hidden mask-linear-gradient' : 'max-h-[1000px]'}`}>
+                    <p className={`text-[11px] md:text-[12px] leading-relaxed text-gray-500 dark:text-zinc-500 max-w-6xl whitespace-pre-line transition-all duration-500 ${!isExpanded ? 'max-h-20 overflow-hidden mask-linear-gradient' : 'max-h-[1000px]'}`}>
                         {project.fullDesc}
                     </p>
 
