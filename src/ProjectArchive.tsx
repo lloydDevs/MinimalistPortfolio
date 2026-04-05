@@ -83,6 +83,35 @@ const ProjectDetailCard = ({ project, index, onImageClick }: { project: any, ind
                         ))}
                     </div>
                 </div>
+                {/* COLLABORATORS SECTION */}
+                {project.credits && project.credits.length > 0 && (
+                    <div className="mt-6 pt-4 border-t border-gray-50 dark:border-zinc-900/50">
+                        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span className="text-[9px] font-mono text-gray-400 uppercase tracking-widest">
+                                Contributors //
+                            </span>
+                            {project.credits.map((person: any, i: number) => (
+                                <a
+                                    key={i}
+                                    href={person.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-1.5 group/link"
+                                >
+                                    <span className="text-[10px] font-bold text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors underline decoration-gray-200 dark:decoration-zinc-800 underline-offset-4">
+                                        {person.name}
+                                    </span>
+                                    <span className="text-[9px] font-mono text-gray-400 italic">
+                                        ({person.role})
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="text-gray-300 group-hover/link:text-blue-500 transition-colors">
+                                        <path d="M7 7h10v10M7 17L17 7" />
+                                    </svg>
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                )}
                 {/* FOLDABLE DESCRIPTION */}
                 <div className="relative">
                     <p className={`text-[11px] md:text-[12px] leading-relaxed text-gray-500 dark:text-zinc-500 max-w-6xl whitespace-pre-line transition-all duration-500 ${!isExpanded ? 'max-h-20 overflow-hidden mask-linear-gradient' : 'max-h-[1000px]'}`}>
@@ -167,6 +196,9 @@ export const ProjectArchive = () => {
         {
             title: "Palay Classifier",
             tag: "Image Processing",
+            credits: [
+                { name: "Arwin Madeja", role: "Developer", link: "https://www.linkedin.com/in/arwin-madeja-47033a194?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+            ],
             github: "https://github.com/Tokikaze0/Palay_Tech.git",
             fullDesc: `SYSTEM OVERVIEW:
                     An end-to-end agricultural automation solution designed to modernize the palay trading process. The system replaces manual inspection with high-precision computer vision and integrated hardware to ensure fairness and transparency for both farmers and traders.
@@ -206,6 +238,9 @@ export const ProjectArchive = () => {
             title: "SMARTPORT",
             github: "",
             tag: "Web Application",
+            credits: [
+                { name: "Miguel Recinto", role: "Front-end Developer", link: "miguelrecintoportfolio.netlify.app" },
+            ],
             badge: "STIRDC Regional Champion",
             fullDesc: `SYSTEM OVERVIEW:
             A comprehensive maritime logistics and port authority management platform designed to digitize the traditional shipping lifecycle. SmartPort acts as a unified digital twin for port operations, integrating financial transactions, scheduling, and live asset tracking into a single low-latency interface.
@@ -386,6 +421,7 @@ export const ProjectArchive = () => {
                     </div>
                 </div>
             </div>
+
 
             <footer className="py-2 text-center border-t border-gray-100 dark:border-zinc-900">
                 <p className="text-[9px] font-mono text-gray-300 dark:text-zinc-800 uppercase tracking-[1em]">
