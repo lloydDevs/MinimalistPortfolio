@@ -11,6 +11,7 @@ import { Contact } from './components/Contacts';
 import { StatusBoard } from './components/DigitalStats';
 import { ProjectArchive } from './ProjectArchive';
 import AssistiveTouch from './components/AssistiveTouch';
+import { NotFound } from './components/NotFound';
 
 const MainPage = () => (
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,6 +55,8 @@ export default function App() {
             <Route path="/" element={<MainPage />} />
 
             <Route path="/projects" element={<ProjectArchive />} />
+            {/* THE CATCH-ALL ROUTE (Must be last) */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
 
           <footer className="mt-20 pb-10 border-t border-gray-100 dark:border-zinc-900 pt-8 px-4">
