@@ -65,7 +65,7 @@ export default function App() {
               <div className="flex items-center gap-3">
                 <span className="h-[1px] w-8 bg-gray-100 dark:bg-zinc-800 hidden md:block" />
                 <p className="text-[10px] font-bold text-gray-400 dark:text-zinc-500 uppercase tracking-[0.15em]">
-                  Inspired by <span className="mx-2 text-gray-300 dark:text-zinc-800">/</span>
+                  Design inspired by <span className="mx-2 text-gray-300 dark:text-zinc-800">/</span>
                   <span className="text-black dark:text-white hover:text-orange-600 transition-colors cursor-default">
                     Bryl Lim
                   </span>
