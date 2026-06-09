@@ -18,7 +18,7 @@ export const About = () => {
                     <div className="space-y-1">
                         <p className="text-[9px] font-black uppercase tracking-widest text-orange-600 dark:text-orange-500">Core Engineering</p>
                         <p className="text-black dark:text-zinc-200">
-                            Currently in <span className="font-bold">Industrial Automation</span> and <span className="font-bold">IoT</span> systems, developing custom hardware-software solutions like the CtRH singeing technology.
+                            Currently in <span className="font-bold">Web development</span> and <span className="font-bold">Software</span> systems, developing scalable and maintainable web application.
                         </p>
                     </div>
                     <div className="space-y-1">

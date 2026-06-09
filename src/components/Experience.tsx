@@ -5,6 +5,14 @@ export const Experience = () => {
 
     const items = [
         {
+            role: "Programmer",
+            org: "DA MIMAROPA",
+            year: "2026",
+            description: "Programmer/Web Developer of DA RFO MIMAROPA.",
+            stack: ["Laravel", "Vue js", "Inertia js", "SQL", "Web Development", "System Maintenance", "IT Support"]
+        },
+
+        {
             role: "Project Technical Specialist I",
             org: "MinSU Research Division",
             year: "2025 - 2026",
