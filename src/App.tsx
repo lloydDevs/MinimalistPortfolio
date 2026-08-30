@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -12,6 +11,7 @@ import { StatusBoard } from './components/DigitalStats';
 import { ProjectArchive } from './ProjectArchive';
 import AssistiveTouch from './components/AssistiveTouch';
 import { NotFound } from './components/NotFound';
+import { Maintenance } from './components/Maintenance';
 
 const MainPage = () => (
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,6 +47,7 @@ const MainPage = () => (
 export default function App() {
   return (
     <Router>
+      <Maintenance />
       <ScrollToTop />
       <div className="min-h-screen bg-bg-soft dark:bg-bg-dark text-black dark:text-white transition-colors duration-300 selection:bg-orange-500/30 z-10">
         <div className="max-w-6xl mx-auto px-6 py-12">
